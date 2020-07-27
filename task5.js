@@ -26,11 +26,21 @@
 // Индия - 80 кредитов
 // Ямайка - 120 кредитов
 
-let countryName = 'saMsUNg';
-countryName = countryName[0].toLocaleUpperCase + countryName.slice(1).toLocaleLowerCase;
-console.log(countryName);
 
 
+// console.log(message);
+
+//если countryName равно "КитаЙ"
+// то значение message будет равно
+// 'Доставка в Китай будет стоить 100 кредитов'
+
+//если countryName равно null
+// то значение message будет равно
+// 'Отменено пользователем!'
+
+//если countryName равно "Чили"
+// то значение message будет равно
+// 'В выбранную страну доставка недоступна.'
 
 const countryName = "КитаЙ";
 
@@ -46,28 +56,29 @@ let country;
 if (countryName === null) {
   message = CANCELED_BY_USER;
 } else {
-  country = countryName[0].toUpperCase + countryName.slice(1).toLocaleLowerCase; // Write code on this line
+  country = countryName[0].toUpperCase() + countryName.slice(1).toLowerCase(); // Write code on this line
   switch (country) {
   // Write code under this line
-    case1:
-      price ===
-        break;
+  case INDIA:
+      price = 80;
+      break;
+
+    case CHINA:
+      price = 100;
+      break;
+
+    case JAMAICA:
+      price = 120;
+      break;
+
+    case AUSTRALIA:
+      price = 170;
+      break;
+
+    default:
+      message = NO_DELIVERY;
   }
 }
-if () { // Write code on this line
+if (price > 0) { // Write code on this line
   message = `Доставка в ${country} будет стоить ${price} кредитов`;
 }
-
-// console.log(message);
-
-//если countryName равно "КитаЙ"
-// то значение message будет равно
-// 'Доставка в Китай будет стоить 100 кредитов'
-
-//если countryName равно null
-// то значение message будет равно
-// 'Отменено пользователем!'
-
-//если countryName равно "Чили"
-// то значение message будет равно
-// 'В выбранную страну доставка недоступна.'
