@@ -11,10 +11,19 @@
 
 // 1. объединить строки
 
-const getItemsString = function(array) {
+// const getItemsString = function(array) {
     // Write code under this line
 
+  // };
+
+
+  const getItemsString = function(array) {
+      for (const arr of array){
+        console.log(array.join(' , '));
+      }
   };
+
+  getItemsString(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
 
   //console.log(getItemsString(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']));
   /*
