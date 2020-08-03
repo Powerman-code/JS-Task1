@@ -4,25 +4,31 @@
 
 function findLongestWord (string = "") {
   let words = string.split(' ');
+  let largestWord = words [0];
 
-  for (let word.length of words);
+  // console.log(largestWord);
 
+  for (let word of words) {
+    if (word.length > largestWord.length) {
+      largestWord = word;
+      // console.log(largestWord);
+    }
+    console.log(largestWord);
 
-    console.log(words);
-
-    // return word.length <
+  }
+    return largestWord;
 
   }
 
-   console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
+  //  console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
 //    'jumped'
 
-//   console.log(findLongestWord('Google do a roll'));
+    // console.log(findLongestWord('Google do a roll'));
 //    'Google'
 
-//   console.log(findLongestWord('May the force be with you'));
+ console.log(findLongestWord('May the force be with you'));
 //    'force'
 
 // 1. Написать переменную, которая принимает строку, и делает из нее масив
 // 2. Перебрать компоненты масива
-// 3. Если слово самое маленькое слово - записать в переменную.
+// 3. Если слово самое длинное слово - записать в переменную.
