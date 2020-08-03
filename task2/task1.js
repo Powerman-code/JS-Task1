@@ -18,9 +18,14 @@
 
 
   const getItemsString = function(array) {
-      for (const arr of array){
-        console.log(array.join(' , '));
+    let result = '';
+      for (let i = 0; i < array.length; i += 1){
+        result += `${i + 1} - ${array[i]}\n`;
+
+
+        console.log(result);
       }
+      return result;
   };
 
   getItemsString(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
