@@ -7,36 +7,22 @@
 // Слова в строке могут быть в произвольном регистре.
 
 function checkForSpam (str) {
-    let message = str.toLowerCase().split(' ');
-    console.log(message);
-    // const searchedWords = ['spam', 'sale'];
-    // console.log(searchedWords);
+    let message = str.toLowerCase();
+      console.log(message);
 
-//    for (mess of message) {
-//        mess
-//    }
+    return message.includes('sale') || message.includes('spam');
+      //   console.log(message);
 
-//    (message.includes(searchedWords)); { }
-    // console.log(message);
-
-    return (message === 'spam' || message === 'sale');
-
-    // // return message;
-    console.log(message);
     }
-    // console.log(message.includes('spam' || 'sale'));
-    // console.log(message.includes('sale'));
 
 
+  // console.log(checkForSpam('Latest technology news')); // false
 
+  // console.log(checkForSpam('JavaScript weekly newsletter')); // false
 
-  console.log(checkForSpam('Latest technology news')); // false
+  // console.log(checkForSpam('Get best sale offers now!')); // true
 
-  console.log(checkForSpam('JavaScript weekly newsletter')); // false
-
-  console.log(checkForSpam('Get best sale offers now!')); // true
-
-  console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
+  console.log(checkForSpam('[SPAM] spam How to earn fast money?')); // true
 
 //   1. Создать переменную
 //   2. Записать туда строку
