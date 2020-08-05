@@ -45,10 +45,18 @@ function isLoginValid (login, min = 4, max = 16) {
   }
 
 
-  function isLoginUnique  (allLogins, login) {
+  function isLoginUnique (allLogins, login) {
     'use strict';
-    // console.log(login.includes(allLogins));
-    return allLogins.includes(login);
+    return !allLogins.includes(login);
+    // return
+    // if (allLogins.includes(login)) {
+    //   console.log('Такого логина нет');
+    //   return true;
+    // };
+    //   console.log('Такой логин есть');
+    //   return false;
+    // let mesg = logins.includes(login) ? 'Тру, пользователь ${login} найден' : 'Фолс, пользователь ${login} не найден';
+    // console.log(allLogins);
 
   }
 
@@ -59,26 +67,71 @@ function isLoginValid (login, min = 4, max = 16) {
     const ERROR = 'Ошибка! Логин должен быть размером от 4 до 16 символов';
     let message;
 
-    if (isLoginValid(login)) {
-      if (isLoginUnique(login)) {
-        logins.push(login);
-        return SUCCESS;
-      }
-       return REFUSAL;
-    }
-      return ERROR;
+    // if(isLoginValid(login) === true) {
+    //   let message =
+    //   message =
+    // }
 
+    if(isLoginValid(login)) {
+              if(isLoginUnique(allLogins, login)) {
+                allLogins.push(login);
+                let message = SUCCESS;
+                return message;
+                console.log(SUCCESS);
+                console.log(allLogins);
+              } let message = REFUSAL;
+                return message;
+    }
+
+    return ERROR;
   }
 
-//   if (login.isLoginValid()) {
-//     if (login.isLoginUnique()) {
-//       logins.push(login);
-//       return SUCCESS;
-//     }
-//      else return REFUSAL;
-//  }
-//    else return ERROR;
-//  }
+//   2 вариант
+
+// function isLoginValid (login, min = 4, max = 16) {
+//   // Write code under this line
+// Условие: Напиши функцию isLoginValid(login), в которой проверь количество символов параметра login и верни
+//  true или false в зависимости от того, попадает ли длина параметра в заданный диапазон от 4-х до 16-ти
+//   символов включительно.
+//   return login.length >= min && login.length <= max;
+// }
+
+// function isLoginUnique  (allLogins, login) {
+//   'use strict';
+//   // Write code under this line
+// Условие: Напиши функцию isLoginUnique(allLogins, login), которая принимает список всех логинов и добавляемый логин
+// как параметры и проверяет наличие login в массиве allLogins, возвращая true если такого логина еще нет
+// и false если логин уже используется. Логин уникальный? Логин не найден - да, уникальный. Логин найден - нет, не уникальный.
+//  return !allLogins.includes(login);
+// }
+
+// function addLogin (allLogins, login) {
+//   'use strict';
+//   const SUCCESS = 'Логин успешно добавлен!';
+//   const REFUSAL = 'Такой логин уже используется!';
+//   const ERROR = 'Ошибка! Логин должен быть размером от 4 до 16 символов';
+//   let message;
+//   // Write code under this line
+//     if (!isLoginValid(login)) {
+//     message = ERROR;
+//     return message;
+//   }
+//     else if (!isLoginUnique(allLogins, login)) {
+//     message = REFUSAL;
+//     return message;
+//   }
+//   else {
+//   allLogins.push(login);
+//   message = SUCCESS;
+//   return SUCCESS;
+// }
+// }
+
+
+
+
+
+
 
   const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
 
@@ -95,7 +148,7 @@ function isLoginValid (login, min = 4, max = 16) {
 
     console.log(addLogin(logins, 'jqueryisextremelyfast'));
   // 'Ошибка! Логин должен быть от 4 до 16 символов'
-
+    // console.log(addLogin(logins, 'Pole'));
 
 //   1. Напиши скрипт добавления логина в массив logins
 //   2. Добавляемый логин должен: проходить проверку на длину от 4 до 16-ти символов включительно
