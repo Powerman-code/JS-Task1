@@ -1,15 +1,31 @@
-Задача 3-3
-Поиск наибольшего значения среди свойств объекта
-Напиши функцию findBestEmployee(employees), которая принимает объект сотрудников и возвращает
-имя самого продуктивного (который выполнил больше всех задач).
-Сотрудники и кол-во выполненных задач содержатся как свойства объекта в формате "имя":"кол-во задач".
+// Задача 3-3
+// Поиск наибольшего значения среди свойств объекта
+// Напиши функцию findBestEmployee(employees), которая принимает объект сотрудников и возвращает
+// имя самого продуктивного (который выполнил больше всех задач).
+// Сотрудники и кол-во выполненных задач содержатся как свойства объекта в формате "имя":"кол-во задач".
 
 
 const findBestEmployee = function (employees) {
     'use strict';
     // Write code under this line
-    console.log(this.developers);
+    const values = Object.values(employees);
+    // console.log(values);
 
+    let bestEmployee = values[0];
+    // console.log(bestEmployee);
+
+    for(const value of values) {
+    // console.log(value);
+
+    // console.log(bestEmployee);
+
+
+    if (value > bestEmployee) {
+      bestEmployee = value;
+    }
+    console.log(bestEmployee);
+    // return bestEmployee;
+    }
   };
 
   // Объекты и ожидаемый результат
@@ -19,22 +35,22 @@ const findBestEmployee = function (employees) {
     helen: 1,
     lorence: 99,
   };
-  //console.log(findBestEmployee(developers));
+  console.log(findBestEmployee(developers));
   // 'lorence'
 
-  const supports = {
-    poly: 12,
-    mango: 17,
-    ajax: 4,
-  };
-  //console.log(findBestEmployee(supports));
+  // const supports = {
+  //   poly: 12,
+  //   mango: 17,
+  //   ajax: 4,
+  // };
+  // console.log(findBestEmployee(supports));
   // 'mango'
 
-  const sellers = {
-    lux: 147,
-    david: 21,
-    kiwi: 19,
-    chelsy: 38,
-  }
-  //console.log(findBestEmployee(sellers));
+  // const sellers = {
+  //   lux: 147,
+  //   david: 21,
+  //   kiwi: 19,
+  //   chelsy: 38,
+  // }
+  // console.log(findBestEmployee(sellers));
   // 'lux'
