@@ -6,10 +6,9 @@
 
 
 const findBestEmployee = function (employees) {
-    'use strict';
-
-    const entries = Object.entries(employees);
-    console.log(entries);
+  'se strict';
+  const entries = Object.entries(employees);
+  console.log(entries);
 
 
 
