@@ -17,16 +17,21 @@
 function calculateTotalPrice (array, prop) {
     'use strict';
     // Write code under this line
-    const totalProductPrice = 0;
-    for (const arr of array){
-        // console.log(arr);
-        if(prop in arr) {
-            console.log('Yes');
-            // let value = arr[prop];
-            // console.log('Yes');
-        }
 
+    let pricePerProp = 0;
+
+    for (const arr of array) {
+        // console.log(typeof arr);
+        // console.log(arr.price * arr.quantity);
+        if (prop === arr.name)
+        // console.log(arr); console.log(prop);
+        {
+            pricePerProp += arr.price * arr.quantity;
+        }
+        // console.log(pricePerProp);
     }
+
+    return pricePerProp;
   }
 
   // Объекты и ожидаемый результат
@@ -40,14 +45,24 @@ function calculateTotalPrice (array, prop) {
       { name: 'Захват', price: 1200, quantity: 2 }
   ];
 
-  console.log(calculateTotalPrice(products, 'Радар'));
+   console.log(calculateTotalPrice(products, 'Радар'));
   // 9080
 
-  //console.log(calculateTotalPrice(products, 'Сканер'));
+  console.log(calculateTotalPrice(products, 'Сканер'));
   // 10200
 
-  //console.log(calculateTotalPrice(products, 'Захват'));
+  console.log(calculateTotalPrice(products, 'Захват'));
   // 2400
 
-  //console.log(calculateTotalPrice(products, 'Дроид'));
+  console.log(calculateTotalPrice(products, 'Дроид'));
   // 2800
+
+
+//   -------------------- 2 вариант
+
+//   Задал переменные totalPrice = 0, subTotal = 0;
+// Через цикл for ... of перебрал массив объектов;
+// На каждой итерации деструктуризировал свойства объекта в переменные;
+// Затем сравнил равно ли значение переменной name аргументу prop;
+// Если да, то значению переменной subTotal присваиваю произведение переменных price и quantity;
+// В totalPrice прибавляю subTotal;
