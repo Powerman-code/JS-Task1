@@ -11,25 +11,31 @@ function getAllPropValues (array, prop) {
     // Write code under this line
 
     const values = [];
+    // const serchedProp = prop;
+    // console.log(serchedProp);
     // let value = [];
     // console.log(productsProp);
-    for(const arr of array) {
-        console.log(arr);
-        let value = arr[prop]; /* value = строка*/
-        values.push(value);
-        // console.log(values);
 
-        // if (arr.includes(prop)) {
-        //     values.push(value);
-        //     console.log(values);
-        // }
+    for(const arr of array) {
+      let value = arr[prop];
+      // console.log(value);
+      if (prop in arr) {
+        values.push(value);
+      }
     }
-    // return values;
+    return values;
 
 }
 
 
+    // let value = arr[prop]; /* value = строка*/
+            // values.push(value);
+            // console.log(values);
 
+            // if (arr.includes(prop)) {
+            //     values.push(value);
+            //     console.log(values);
+            // }
 
 
 
@@ -47,11 +53,11 @@ function getAllPropValues (array, prop) {
       { name: 'Захват', price: 1200, quantity: 2 },
   ];
 
-//   console.log(getAllPropValues(products, 'name'));
+   console.log(getAllPropValues(products, 'name'));
   // ['Радар', 'Радар', 'Радар', 'Сканер', 'Сканер', 'Дроид', 'Захват']
 
-//    console.log(getAllPropValues(products, 'quantity'));
+    console.log(getAllPropValues(products, 'quantity'));
   // [4, 2, 1, 1, 3, 7, 2]
 
-  console.log(getAllPropValues(products, 'category'));
+   console.log(getAllPropValues(products, 'category'));
   //  []
