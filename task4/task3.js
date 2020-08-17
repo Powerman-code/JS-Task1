@@ -16,7 +16,7 @@ function reduceArray(array, cb, initial) {
   'use strict';
   let i;
   let accum;
-  console.log(arguments);
+  // console.log(arguments);
   if(arguments.length >= 3) {
     accum = initial;
     i = 0;
@@ -25,12 +25,14 @@ function reduceArray(array, cb, initial) {
     accum = array[0];
     i = 1;
   }
+  console.log(array[0]);
   for(i; i < array.length; i += 1) {
     const element = array[i];
     // Write code under this line
-
+    // console.log(array[i]);
+    accum = cb(accum, element);
   }
-//   return accum;
+  return accum;
 }
 
 const arr  = [1,2,3,4,5];
