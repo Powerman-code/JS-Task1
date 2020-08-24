@@ -19,16 +19,23 @@
       return this._value;
     }
        append(str) {
-         this._value + str;
+        // return (this._value += str);
+        console.log(this._value += str);
        }
+      //  console.log(append);
 
        prepend(str) {
-         str + this._value;
+
+        // return this._value = str + this._value;
+        console.log(this._value = str + this._value);
+
        }
 
        pad(str) {
-         str + this._value + str;
-       }
+        return (str + this.append(str)) + (this.prepend(str) + str);
+        // console.log(str + this.append);
+        console.log(append(str));
+        }
    }
 
     console.log(typeof StringBuilder);
@@ -45,3 +52,5 @@
 
     builder.pad('=');
    // console.log(builder.value); // '=^.^='
+
+   get(value);
