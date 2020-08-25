@@ -116,15 +116,16 @@
 class Car {
 
     static getSpecs(car){
-     return `${this._maxSpeed}, ${this._speed}, ${this._isOn}, ${this._distance}, ${this._price},`;
+     return `maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car._price}`;
      }
-     constructor(speed = 0, price, maxSpeed, isOn = false, distance = 0){
-         this._speed = speed,
+     constructor({ speed = 0, price, maxSpeed, isOn = false, distance = 0 } = {}){
+         this.speed = speed,
          this._price = price,
-         this._maxSpeed = maxSpeed,
-         this._isOn = isOn,
-         this._distance = distance
+         this.maxSpeed = maxSpeed,
+         this.isOn = isOn,
+         this.distance = distance
      }
+
      get price() {
          return this._price;
      }
@@ -132,28 +133,42 @@ class Car {
          this._price = value;
      }
      turnOn() {
-        this._isOn = true;
+        this.isOn = true;
+      //   console.log(this.isOn);
      }
      turnOff() {
-        this._isOn = false;
-        this._speed = 0;
+        this.isOn = false;
+         this.speed = 0;
+         // console.log(this.isOn);
+         // console.log(this.speed);
      }
      accelerate(value) {
-        if (this._speed < this._maxSpeed) {
-            this._speed += value;
-        }
+      if (value + this.speed > this.maxSpeed) {
+         this.speed = this.maxSpeed;
+
+     }else this.speed += value;
      }
      decelerate(value) {
-         if (this._speed >= 0) {
-            this._speed -= value;
-         }
+         if (this.speed - value > 0) {
+            this.speed -= value;
+            // console.log(this.speed);
+         } else this.speed = 0;
      }
      drive(hours) {
-         if (this._isOn = true) {
-            this._distance = hours * this._speed;
+         if (this.isOn = true) {
+            this.distance += hours * this.speed;
+            // console.log(this.distance);
+            // console.log(this.maxSpeed);
          }
      }
    }
+
+   // console.log(this.maxSpeed);
+   //       console.log(this.speed);
+   //       console.log(this.isOn);
+   //       console.log(this.distance);
+   //       console.log(this._price);
+
 
    const mustang = new Car({ maxSpeed: 200, price: 2000 });
    mustang.turnOn();
