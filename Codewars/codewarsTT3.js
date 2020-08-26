@@ -20,12 +20,12 @@ let initialName = name.split(' ');
 let firstName = initialName[0].split('');
 let surName = initialName[1].split('');
 let arrayName = Array.from(initialName[0]);
-let arraySurname = Array.from(initialName[1]).toUppercase();
+let arraySurname = Array.from(initialName[1]);
 console.log(arrayName);
 console.log(arraySurname);
 
 
-return `${arrayName[0]}.${arraySurname[0]}`;
+return `${arrayName[0].toUpperCase()}.${arraySurname[0]}`;
 // // console.log(firstName);
 // initials.push(firstName[0]);
 // initials.push(surName[0]);
