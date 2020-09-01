@@ -25,7 +25,7 @@ console.log(arrayName);
 console.log(arraySurname);
 
 
-return `${arrayName[0].toUpperCase()}.${arraySurname[0]}`;
+return `${arrayName[0].toUpperCase()}.${arraySurname[0].toUpperCase()}`;
 // // console.log(firstName);
 // initials.push(firstName[0]);
 // initials.push(surName[0]);
@@ -41,3 +41,17 @@ return `${arrayName[0].toUpperCase()}.${arraySurname[0]}`;
 // console.log(initialsString);
 
 console.log(abbrevName("Sam Harris"));
+
+// Варианты
+
+// function abbrevName(name){
+
+//     var nameArray = name.split(" ");
+//     return (nameArray[0][0] + "." + nameArray[1][0]).toUpperCase();
+//   }
+
+// function abbrevName(name){
+
+//     return name.split(' ').map(i => i[0].toUpperCase()).join('.')
+
+// }
