@@ -106,8 +106,24 @@ const users =  [
   ];
 
 // Write code under this line
-const getSortedUniqueSkills = (array) => array.reduce((acc, arr) =>[...acc, ...arr.skills], []);
+const getSortedUniqueSkills = (array) => array.reduce((acc, arr) => [...acc, ...arr.skills], []).filter((acc) =>
+!acc.includes({arr})).sort((prevSkill, nextSkill) => prevSkill.skills - nextSkill.skills);
 console.log(getSortedUniqueSkills);
+
+// const getSortedUniqueSkills = (array) => array.reduce((acc, arr) => {
+// console.log(acc);
+
+// if (!acc[arr]) {
+//   return {
+//   ...acc,
+//   ...arr.skills,
+//   [arr]: acc.arr,
+//   };
+// }, {});
+
+// console.log(getSortedUniqueSkills);
+
+
 
 // console.log(getSortedUniqueSkills(users));
 /* [ 'adipisicing', 'amet',
