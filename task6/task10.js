@@ -106,9 +106,85 @@ const users =  [
   ];
 
 // Write code under this line
-const getSortedUniqueSkills = (array) => array.reduce((acc, arr) => [...acc, ...arr.skills], []).filter((acc) =>
-!acc.includes({arr})).sort((prevSkill, nextSkill) => prevSkill.skills - nextSkill.skills);
-console.log(getSortedUniqueSkills);
+
+// В reduce я передала два параметра: 1 - acc, куда аккумулируются все значения,
+// 2 - деструктуризированный { skills }. В теле редюса написала acc.concat(skills).
+// Таким образом, получился общий массив скиллов. Потом уже применяла фильтер и сорт.
+
+
+// 1 вариант.
+// const getSortedUniqueSkills = (array) => array.reduce((acc, {skills}) =>
+// acc.includes(skills) ? acc : [...acc, skills]);
+
+const getSortedUniqueSkills = (array) => [...array]
+.reduce((acc, {skills}) => [...acc, ...skills], [])
+.filter((item, index, array) => array.indexOf(item) === index)
+.sort();
+// .sort((a, b) => {
+//     const result = a[0] > b[0];
+//     if (result) {
+//       return 1;
+//     }
+
+//     if (!result) {
+//       return -1;
+//     }
+//   });
+  // console.log(
+  //   // a. Item
+  //   item,
+  //   // b. Index
+  //   index,
+  //   // c. indexOf
+  //   array.indexOf(item),
+  //   // d. Condition
+  //   array.indexOf(item) === index,
+  // );
+
+
+
+
+
+// .sort((prevSkill, nextSkill) => {
+//   return prevSkill.skills[0] - nextSkill.skills[0];
+// })
+
+
+ console.log(getSortedUniqueSkills);
+// [...acc, ...skills], []));
+
+// .filter((item, index) => array.indexOf(item) !== index).sort((a, b) => {
+//   const result = a.skills[0] > b.skills[0];
+//   if (result) {
+//     return 1;
+//   }
+
+//   if (!result) {
+//     return -1;
+//   }
+// });
+
+
+
+// acc.includes(skills) ? acc : [...acc, skills]
+
+// uniqArray = a.filter( (item, pos, arr) => !pos || item !== arr[pos - 1] );
+
+// const getSortedUniqueSkills = (array) => array.reduce((acc, arr) => {
+//   console.log(acc);
+//   console.log([...acc, ...arr.skills]);
+//   return [...acc, ...arr.skills];
+// }, []);
+// for(const user of users) {
+
+//   console.log(user.skills);
+// }
+
+
+
+// const getSortedUniqueSkills = (array) => array.reduce((acc, arr) => [...acc, ...arr.skills], []).filter((acc) =>
+// !acc.includes({arr})).sort((prevSkill, nextSkill) => prevSkill.skills - nextSkill.skills);
+// console.log(getSortedUniqueSkills);
 
 // const getSortedUniqueSkills = (array) => array.reduce((acc, arr) => {
 // console.log(acc);
@@ -125,7 +201,7 @@ console.log(getSortedUniqueSkills);
 
 
 
-// console.log(getSortedUniqueSkills(users));
+console.log(getSortedUniqueSkills(users));
 /* [ 'adipisicing', 'amet',
  'anim', 'commodo',
  'culpa', 'elit',
