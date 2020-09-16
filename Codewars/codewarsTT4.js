@@ -1,39 +1,35 @@
-// Given a string of words, you need to find the highest scoring word.
+// Your task is to make a function that can take any non-negative integer as an argument and return it with its
+// digits in descending order. Essentially, rearrange the digits to create the highest possible number.
 
-// Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
+// Examples:
+// Input: 42145 Output: 54421
 
-// You need to return the highest scoring word as a string.
+// Input: 145263 Output: 654321
 
-// If two words score the same, return the word that appears earliest in the original string.
+// Input: 123456789 Output: 987654321
 
-// All letters will be lowercase and all inputs will be valid.
+function descendingOrder(...n){
+    +n.toString().match(/\d/g).sort((a,b)=>b>a).join('')
 
+    };
 
+//    if (element > 0) {
+//        return 'YES'
+//    }
 
-function high(x){
-    const letters = 'abcdefghijklmnopqrstuvwxyz';
-    let words = x.split(' ');
-    let word = words[0];
-    let hiScoringWord = words.split(' ');
-    for (let word of words) {
-        word = words.split(' ');
-    }
-    return hiScoringWord;
-    // let hiScoringWord = words.reduce((accum, words) => {
-    //     console.log(words);
-
-    // //  words
-    // // return word;
-    // }, []);
-
-
-}
-
+    // n.forEach(element => {
+    //     console.log(element);
+    //     // if (element > 0) {
+    //     //     // return 'Числа больше 0'
+    //     //     console.log('ура, числа > 0');
+    //     // }
+    // });
+//    n.sort((a, b) => {
+//        if n
+//    })
 
 
-console.log(high('man i need a taxi up to ubud'));
-// Test.describe("Example tests",_=>{
-//     Test.assertEquals(high('man i need a taxi up to ubud'), 'taxi');
-//     Test.assertEquals(high('what time are we climbing up the volcano'), 'volcano');
-//     Test.assertEquals(high('take me to semynak'), 'semynak');
-//     });
+
+//   console.log(descendingOrder(0), 0);
+//   console.log(descendingOrder(1), 1);
+  console.log(descendingOrder(123456789));
